@@ -42,12 +42,28 @@ body {
     width: auto;
 }
 
+.nav__toggle {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.nav__icon {
+    font-size: 30px;
+    color: #333;
+}
+
 .nav__list {
     list-style: none;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
+    text-align: center;
+}
+
+.nav__list.active {
+    display: flex;
 }
 
 .nav__item {
@@ -127,9 +143,14 @@ body {
     }
 
     .nav__list {
+        display: flex;
         flex-direction: row;
         gap: 30px;
         margin-top: 0;
+    }
+
+    .nav__toggle {
+        display: none;
     }
 
     .main__title {
