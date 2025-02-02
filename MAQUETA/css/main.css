@@ -161,8 +161,6 @@ body {
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    width: 100%;
-    max-width: 300px;
 }
 
 .novelties__list::-webkit-scrollbar {
@@ -178,6 +176,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     scroll-snap-align: center;
+    width: 75px;
 }
 
 .novelties__item:hover {
@@ -229,11 +228,11 @@ body {
 }
 
 .novelties__arrow--left {
-    left: -5px;
+    left: 2px;
 }
 
 .novelties__arrow--right {
-    right: -5px;
+    right: 2px;
 }
 
 /* footer */
@@ -313,11 +312,11 @@ body {
     }
 
     .novelties__arrow--left {
-        left: -5px;
+        left: 50px;
     }
 
     .novelties__arrow--right {
-        right: -5px;
+        right: 50px;
     }
 }
 
@@ -331,7 +330,7 @@ body {
     }
 
     .main__text {
-        font-size: 1.3rem;
+        font-size: 1.75rem;
         max-width: 100%;
     }
 
@@ -341,10 +340,13 @@ body {
 
     .novelties__item {
         width: 200px;
+        flex: 1 1 calc(100% - 20px);
+        width: 300px;
     }
 
     .novelties__list {
         overflow-x: visible;
+        gap: 50px;
     }
 
     .novelties__title {
