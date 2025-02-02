@@ -132,6 +132,110 @@ body {
     margin-right: auto;
 }
 
+
+/* Novedades */
+
+.novelties {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.novelties__title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.novelties__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.novelties__list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    max-width: 300px;
+    scroll-behavior: smooth;
+}
+
+.novelties__item {
+    flex: 0 0 100%;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+    position: relative;
+}
+
+.novelties__item:hover {
+    transform: scale(1.05);
+}
+
+.novelties__image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.novelties__book-title {
+    font-size: 1rem;
+    margin: 10px 0 5px;
+}
+
+.novelties__author {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.novelties__add-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #d68e8e;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: color 0.3s ease;
+}
+
+.novelties__add-btn:hover {
+    color: #a04e4e;
+}
+
+.novelties__arrow {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    transform: translateY(-50%);
+    border-radius: 25%;
+    z-index: 10;
+}
+
+.novelties__arrow--left {
+    left: -50px;
+}
+
+.novelties__arrow--right {
+    right: -50px;
+}
+
 /* footer */
 
 .footer {
@@ -188,6 +292,21 @@ body {
         object-fit: cover;
     }
 
+    .novelties__title {
+        font-size: 2rem;
+    }
+
+    .novelties__list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .novelties__item {
+        width: 160px;
+    }
+
     .footer__text {
         font-size: 1rem;
     }
@@ -210,5 +329,6 @@ body {
         font-size: 1.3rem;
         max-width: 100%;
     }
+
 
 }
