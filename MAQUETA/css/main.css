@@ -227,6 +227,10 @@ body {
     border-radius: 25%;
 }
 
+.novelties__arrow:hover {
+    background-color: #d68e8e;
+}
+
 .novelties__arrow--left {
     left: 2px;
 }
