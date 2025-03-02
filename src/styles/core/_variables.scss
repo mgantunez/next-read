@@ -1,9 +1,9 @@
-/* Móvil */
+/* Móvil y tablet */
 @media (max-width: 768px) {
     .nav {
         &__toggle {
             display: block;
-            /* Muestra el ícono de hamburguesa en móvil */
+            /* Muestra el icono de hamburguesa en móvil */
         }
 
         &__list {
@@ -40,17 +40,6 @@
 
     .header__logo {
         height: 60px;
-    }
-
-    .nav__list {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
-        margin-top: 0;
-    }
-
-    .nav__toggle {
-        display: none;
     }
 
     .main__title {
@@ -109,6 +98,18 @@
     .main__text {
         font-size: 1.75rem;
         max-width: 100%;
+    }
+
+
+    .nav__list {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin-top: 0;
+    }
+
+    .nav__toggle {
+        display: none;
     }
 
     .novelties {
