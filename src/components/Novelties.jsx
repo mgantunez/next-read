@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 function Novelties() {
     return (
         < section className="novelties" >
@@ -7,7 +10,7 @@ function Novelties() {
             <div className="novelties__container">
 
                 <button className="novelties__arrow novelties__arrow--left">
-                    <i className="fa-solid fa-chevron-left"></i>
+                    <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
 
                 <ul className="novelties__list">
@@ -17,7 +20,7 @@ function Novelties() {
                         <h3 className="novelties__book-title">Título del libro</h3>
                         <p className="novelties__author">Autor del libro</p>
                         <button className="novelties__add-btn">
-                            <i className="fa-solid fa-bookmark"></i>
+                            <FontAwesomeIcon icon={faBookmark} />
                         </button>
                     </li>
 
@@ -26,7 +29,7 @@ function Novelties() {
                         <h3 className="novelties__book-title">Título del libro</h3>
                         <p className="novelties__author">Autor del libro</p>
                         <button className="novelties__add-btn">
-                            <i className="fa-solid fa-bookmark"></i>
+                            <FontAwesomeIcon icon={faBookmark} />
                         </button>
                     </li>
 
@@ -35,13 +38,13 @@ function Novelties() {
                         <h3 className="novelties__book-title">Título del libro</h3>
                         <p className="novelties__author">Autor del libro</p>
                         <button className="novelties__add-btn">
-                            <i className="fa-solid fa-bookmark"></i>
+                            <FontAwesomeIcon icon={faBookmark} />
                         </button>
                     </li>
                 </ul>
 
                 <button className="novelties__arrow novelties__arrow--right">
-                    <i className="fa-solid fa-chevron-right"></i>
+                    <FontAwesomeIcon icon={faChevronRight} />
                 </button>
             </div>
 
