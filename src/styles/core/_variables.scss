@@ -1,3 +1,35 @@
+/* Móvil */
+@media (max-width: 768px) {
+    .nav {
+        &__toggle {
+            display: block;
+            /* Muestra el ícono de hamburguesa en móvil */
+        }
+
+        &__list {
+            display: none;
+            /* Oculta el menú en móvil por defecto */
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            text-align: center;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+        }
+
+        &__list.active {
+            display: flex;
+            /* Muestra el menú desplegable en móvil cuando está activo */
+        }
+    }
+}
+
+
 /* Tablet y desktop */
 
 @media (min-width: 768px) {
@@ -99,11 +131,11 @@
     }
 
     .novelties__arrow--left {
-        left: 300px;
+        left: 200px;
     }
 
     .novelties__arrow--right {
-        right: 300px;
+        right: 200px;
     }
 
 }

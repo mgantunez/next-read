@@ -27,7 +27,7 @@ function Header({ isNavVisible, setIsNavVisible }) {
 
                     <ul className={`nav__list ${isNavVisible ? 'active' : ''}`}>
                         <li className="nav__item"><a href="#" className="nav__link">Inicio</a></li>
-                        <li className="nav__item"><a href="#" className="nav__link">Mis libros pendientes</a></li>
+                        <li className="nav__item"><a href="#" className="nav__link">Pendientes</a></li>
                         <li className="nav__item"><a href="#" className="nav__link">Favoritos</a></li>
                         <li className="nav__item"><a href="#" className="nav__link">Contacto</a></li>
                     </ul>
