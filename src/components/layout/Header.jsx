@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -38,6 +40,11 @@ function Header({ isNavVisible, setIsNavVisible }) {
     );
 
 }
+
+Header.propTypes = {
+    isNavVisible: PropTypes.bool.isRequired, // isNavVisible debe ser un booleano y es requerido
+    setIsNavVisible: PropTypes.func.isRequired, // setIsNavVisible debe ser una función y es requerido
+};
 
 export default Header;
 

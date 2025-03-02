@@ -9,10 +9,7 @@ import '../styles/App.scss';
 
 function App() {
 
-
   const [isNavVisible, setIsNavVisible] = useState(false);
-
-
 
   return (
     <>
