@@ -1,26 +1,3 @@
-/* Estilos base para móvil */
-.nav__list {
-    display: none;
-    /* Oculta la lista en móvil por defecto */
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-    text-align: center;
-}
-
-.nav__list.active {
-    display: flex;
-    /* Muestra la lista cuando tiene la clase 'active' */
-}
-
-.nav__toggle {
-    display: block;
-    /* Muestra el menú de hamburguesa en móvil */
-    cursor: pointer;
-    margin-left: auto;
-}
-
-
 /* Tablet y desktop */
 
 @media (min-width: 768px) {
