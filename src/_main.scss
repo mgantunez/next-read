@@ -1,0 +1,153 @@
+/* main */
+.main {
+    background-color: #ffffff;
+    flex-grow: 1;
+
+
+    &__container {
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    &__banner {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    &__banner-img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        color: #333;
+        line-height: 1.2;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__text {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 30px;
+        line-height: 1.8;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* Novedades */
+
+.novelties {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #f9f9f9;
+
+    &__title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    &__list::-webkit-scrollbar {
+        display: none;
+        /* Oculta el scrollbar en Chrome */
+    }
+
+    &__item {
+        flex: 0 0 100%;
+        text-align: center;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        scroll-snap-align: center;
+        width: 75px;
+    }
+
+    &__item:hover {
+        transform: scale(1.05);
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    &__book-title {
+        font-size: 1rem;
+        margin: 10px 0 5px;
+    }
+
+    &__author {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    &__add-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: #d68e8e;
+        transition: color 0.3s ease, transform 0.2s ease-in-out;
+        margin-top: 10px;
+    }
+
+    &__add-btn:hover {
+        color: #a04e4e;
+        transform: scale(1.1);
+    }
+
+    &__arrow {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 25px;
+        cursor: pointer;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 25%;
+    }
+
+    &__arrow:hover {
+        background-color: #d68e8e;
+    }
+
+    &__arrow--left {
+        left: 2px;
+    }
+
+    &__arrow--right {
+        right: 2px;
+    }
+
+}
