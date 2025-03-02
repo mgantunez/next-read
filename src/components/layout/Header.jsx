@@ -1,5 +1,3 @@
-import headerLogo from '../../logo next read.svg';
-
 function Header() {
 
     return (
@@ -8,7 +6,7 @@ function Header() {
             <div className="header__container">
 
                 <a href="#" className="header__logo">
-                    <img className="header__logo-img" src={headerLogo} alt="Next Read Logo" />
+                    <img className="header__logo-img" src="/logo-Next-Read.svg" alt="Next Read Logo" />
                 </a>
 
                 <nav className="nav">

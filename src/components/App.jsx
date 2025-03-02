@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Main from './layout/Main';
@@ -9,16 +9,18 @@ import '../styles/App.scss';
 
 function App() {
   return (
-    <Header />
+    <>
+      <Header />
 
-    <main className="main">
+      <main className="main">
 
-<Main />
-<Novelties />
+        <Main />
+        <Novelties />
 
-    </main>
+      </main>
 
-    <Footer />
+      <Footer />
+    </>
   )
 }
 

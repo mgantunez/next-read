@@ -1,5 +1,3 @@
-import banner from '../../images/banner Next Read.png';
-
 function Main() {
 
     return (
@@ -8,7 +6,7 @@ function Main() {
 
             <div className="main__banner">
 
-                <img className="main__banner-img" src={banner} alt="Banner de Next Read" />
+                <img className="main__banner-img" src="/banner-Next-Read.png" alt="Banner de Next Read" />
 
             </div>
 
