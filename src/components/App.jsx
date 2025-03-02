@@ -8,9 +8,20 @@ import Novelties from './Novelties';
 import '../styles/App.scss';
 
 function App() {
+
+
+  const [isNavVisible, setIsNavVisible] = useState(false);
+
+
+
   return (
     <>
-      <Header />
+      <Header
+
+        isNavVisible={isNavVisible}
+        setIsNavVisible={setIsNavVisible}
+
+      />
 
       <main className="main">
 

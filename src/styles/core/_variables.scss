@@ -1,151 +1,132 @@
-// Variables
-$primary-bg: #f4f4f4;
-$text-color: #333;
-$font-family: 'Quicksand', sans-serif;
+/* Estilos base para móvil */
+.nav__list {
+    display: none;
+    /* Oculta la lista en móvil por defecto */
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
 
-// Mixin para media queries
-@mixin tablet {
-    @media (min-width: 768px) {
-        @content;
+.nav__list.active {
+    display: flex;
+    /* Muestra la lista cuando tiene la clase 'active' */
+}
+
+.nav__toggle {
+    display: block;
+    /* Muestra el menú de hamburguesa en móvil */
+    cursor: pointer;
+    margin-left: auto;
+}
+
+
+/* Tablet y desktop */
+
+@media (min-width: 768px) {
+
+    .header__container {
+        max-width: 1200px;
+    }
+
+    .header__logo {
+        height: 60px;
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin-top: 0;
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .main__title {
+        font-size: 2.5rem;
+        max-width: 600px;
+    }
+
+    .main__text {
+        font-size: 1.2rem;
+        max-width: 650px;
+    }
+
+    .main__banner-img {
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    .novelties__title {
+        font-size: 2rem;
+    }
+
+    .novelties__list {
+        display: flex;
+        padding: 0;
+        align-items: center;
+    }
+
+    .novelties__item {
+        background-color: white;
+        padding: 15px;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .footer__text {
+        font-size: 1rem;
+    }
+
+    .novelties__arrow--left {
+        left: 50px;
+    }
+
+    .novelties__arrow--right {
+        right: 50px;
     }
 }
 
-@mixin desktop {
-    @media (min-width: 1280px) {
-        @content;
-    }
-}
+/* Desktop */
 
-// Estilos para tablet y desktop
-@include tablet {
-    .header {
-        &__container {
-            max-width: 1200px;
-        }
+@media (min-width: 1280px) {
 
-        &__logo {
-            height: 60px;
-        }
+    .main__title {
+        font-size: 3rem;
+        max-width: 80%;
     }
 
-    .nav {
-        &__list {
-            display: flex;
-            flex-direction: row;
-            gap: 30px;
-            margin-top: 0;
-        }
-
-        &__toggle {
-            display: none;
-        }
-    }
-
-    .main {
-        &__title {
-            font-size: 2.5rem;
-            max-width: 600px;
-        }
-
-        &__text {
-            font-size: 1.2rem;
-            max-width: 650px;
-        }
-
-        &__banner-img {
-            max-height: 500px;
-            object-fit: cover;
-        }
-    }
-
-    .novelties {
-        &__title {
-            font-size: 2rem;
-        }
-
-        &__list {
-            display: flex;
-            padding: 0;
-            align-items: center;
-        }
-
-        &__item {
-            background-color: white;
-            padding: 15px;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        &__arrow {
-            &--left {
-                left: 50px;
-            }
-
-            &--right {
-                right: 50px;
-            }
-        }
-    }
-
-    .footer {
-        &__text {
-            font-size: 1rem;
-        }
-    }
-}
-
-// Estilos para desktop
-@include desktop {
-    .main {
-        &__title {
-            font-size: 3rem;
-            max-width: 80%;
-        }
-
-        &__text {
-            font-size: 1.75rem;
-            max-width: 100%;
-        }
-    }
-
-    .nav {
-        &__list {
-            display: flex;
-            flex-direction: row;
-            gap: 30px;
-            margin-top: 0;
-        }
-
-        &__toggle {
-            display: none;
-        }
+    .main__text {
+        font-size: 1.75rem;
+        max-width: 100%;
     }
 
     .novelties {
         padding: 50px 20px;
-
-        &__item {
-            width: 200px;
-            flex: 1 1 calc(100% - 20px);
-            width: 300px;
-        }
-
-        &__list {
-            overflow-x: visible;
-            gap: 50px;
-        }
-
-        &__title {
-            font-size: 2.5rem;
-        }
-
-        &__arrow {
-            &--left {
-                left: 300px;
-            }
-
-            &--right {
-                right: 300px;
-            }
-        }
     }
+
+    .novelties__item {
+        width: 200px;
+        flex: 1 1 calc(100% - 20px);
+        width: 300px;
+    }
+
+    .novelties__list {
+        overflow-x: visible;
+        gap: 50px;
+    }
+
+    .novelties__title {
+        font-size: 2.5rem;
+    }
+
+    .novelties__arrow--left {
+        left: 300px;
+    }
+
+    .novelties__arrow--right {
+        right: 300px;
+    }
+
 }

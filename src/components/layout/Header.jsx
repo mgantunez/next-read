@@ -1,7 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-function Header() {
+function Header({ isNavVisible, setIsNavVisible }) {
+
+    // Para mostrar el menú en la hamburguesa
+    const toggleNav = () => {
+        setIsNavVisible(!isNavVisible);
+    };
 
     return (
         <header className="header">
@@ -14,11 +19,11 @@ function Header() {
 
                 <nav className="nav">
 
-                    <div className="nav__toggle" id="nav-toggle">
+                    <div className="nav__toggle" id="nav-toggle" onClick={toggleNav}>
                         <FontAwesomeIcon icon={faBars} className="nav__icon" />
                     </div>
 
-                    <ul className="nav__list">
+                    <ul className={`nav__list ${isNavVisible ? 'active' : ''}`}>
                         <li className="nav__item"><a href="#" className="nav__link">Inicio</a></li>
                         <li className="nav__item"><a href="#" className="nav__link">Mis lecturas pendientes</a></li>
                         <li className="nav__item"><a href="#" className="nav__link">Favoritos</a></li>

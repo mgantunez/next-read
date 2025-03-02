@@ -1,4 +1,5 @@
-@use 'core/reset';
+@use 'core/_reset';
+@use 'core/_variables';
 
 @use '../styles/_header.scss';
 @use '../styles/_main.scss';
