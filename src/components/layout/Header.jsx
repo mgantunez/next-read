@@ -1,3 +1,7 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
 function Header() {
 
     return (
@@ -12,7 +16,7 @@ function Header() {
                 <nav className="nav">
 
                     <div className="nav__toggle" id="nav-toggle">
-                        <i className="fa-solid fa-bars nav__icon"></i>
+                        <FontAwesomeIcon icon={faBars} className="nav__icon" />
                     </div>
 
                     <ul className="nav__list">
