@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import Main from './layout/Main';
+import Recommendations from './Recommendations';
 import Novelties from './Novelties';
 
 import '../styles/App.scss';
@@ -23,6 +24,7 @@ function App() {
       <main className="main">
 
         <Main />
+        <Recommendations />
         <Novelties />
 
       </main>
