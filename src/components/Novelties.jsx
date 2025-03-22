@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+import nonAvailableImage from '../images/Imagen-no-disponible.png';
+
 function Novelties() {
     const [books, setBooks] = useState([]);
     const [currentOffset, setCurrentOffset] = useState(0); // Offset inicia en 0 para empezar desde el primer libro
@@ -69,9 +71,16 @@ function Novelties() {
                             <li className="novelties__item" key={index}>
                                 <img
                                     className="novelties__image"
-                                    src={book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : "https://placehold.co/150x220"}
-                                    alt={`Portada del libro: ${book.title}`}
+                                    src={book.cover_i ?
+                                        `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+                                        :
+                                        nonAvailableImage}
+                                    alt={book.cover_i ?
+                                        `Portada del libro: ${book.title}`
+                                        :
+                                        "Imagen no disponible"}
                                 />
+
                                 <h3 className="novelties__book-title">{book.title}</h3>
                                 <p className="novelties__author">{book.author_name ? book.author_name.join(", ") : "Autor desconocido"}</p>
                                 <button className="novelties__add-btn">
