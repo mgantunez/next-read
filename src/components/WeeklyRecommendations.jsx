@@ -4,7 +4,7 @@ import { faBookmark, faChevronLeft, faChevronRight } from '@fortawesome/free-sol
 
 import nonAvailableImage from '../images/Imagen-no-disponible.png';
 
-function Novelties() {
+function WeeklyRecommendations() {
     const [books, setBooks] = useState([]);
     const [currentOffset, setCurrentOffset] = useState(0); // Offset para manejar la paginación
     const [totalBooks, setTotalBooks] = useState(0); // Total de libros disponibles
@@ -51,7 +51,7 @@ function Novelties() {
 
     return (
         <section className="novelties">
-            <h2 className="novelties__title">Recomendaciones de la semana</h2>
+            <h2 className="novelties__title">Open Library: libros en tendencia esta semana</h2>
 
             <div className="novelties__container">
 
@@ -108,4 +108,4 @@ function Novelties() {
     );
 }
 
-export default Novelties;
+export default WeeklyRecommendations;

@@ -4,7 +4,7 @@ import { faBookmark, faChevronLeft, faChevronRight } from '@fortawesome/free-sol
 
 import nonAvailableImage from '../images/Imagen-no-disponible.png';
 
-function Recommendations() {
+function NextReadRecommendations() {
     const [books, setBooks] = useState([]);
     const [currentOffset, setCurrentOffset] = useState(0); // Offset inicia en 0 para empezar desde el primer libro
     const [totalBooks, setTotalBooks] = useState(0); // Total de libros disponibles 
@@ -107,4 +107,4 @@ function Recommendations() {
     );
 }
 
-export default Recommendations;
+export default NextReadRecommendations;
