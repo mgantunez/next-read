@@ -4,20 +4,49 @@ import { faBookmark, faChevronLeft, faChevronRight } from '@fortawesome/free-sol
 
 function Novelties() {
     const [books, setBooks] = useState([]);
+    const [currentOffset, setCurrentOffset] = useState(0); // Offset inicia en 0 para empezar desde el primer libro
+    const [totalBooks, setTotalBooks] = useState(0); // Total de libros disponibles 
+    const limit = 3; // Limite de libros por página
+
+    const fetchBooks = async () => {
+        try {
+            const response = await fetch(`https://openlibrary.org/search.json?q=author:Chimamanda+Ngozi+Adichie&lan=es&limit=${limit}&offset=${currentOffset}`);
+            const data = await response.json();
+            setBooks(data.docs);
+            setTotalBooks(Math.floor(data.numFound - limit)); // Establecer el total de libros encontrados
+        } catch (error) {
+            console.error("Error fetching books:", error);
+        }
+    };
 
     useEffect(() => {
-        const fetchBooks = async () => {
-            try {
-                const response = await fetch("https://openlibrary.org/search.json?q=author:Chimamanda+Ngozi+Adichie&lan=es&limit=3");
-                const data = await response.json();
-                setBooks(data.docs);
-            } catch (error) {
-                console.error("Error fetching books:", error);
-            }
-        };
-
         fetchBooks();
-    }, []);
+    }, [currentOffset]); // Vuelve a llamar a la API cada vez que cambia el offset
+
+    // Maneja el clic de la flecha izquierda
+
+    const handlePreviousPage = () => {
+
+        if (currentOffset > 0) {
+            setCurrentOffset(currentOffset - limit);
+        } else if (currentOffset === 0 && totalBooks > 0) {
+            // Si estamos en el primer conjunto de libros, ir al último conjunto disponible
+            setCurrentOffset(totalBooks); // Última página
+        }
+    };
+
+    // Maneja el clic de la flecha derecha
+
+    const handleNextPage = () => {
+
+        if (currentOffset + limit < totalBooks) {
+            // Si no hemos llegado al final de los libros, aumenta el offset
+            setCurrentOffset(currentOffset + limit);
+        } else {
+            // Si estamos en la última página, vuelve al principio
+            setCurrentOffset(0); // Reinicia la paginación
+        }
+    };
 
     return (
         <section className="novelties">
@@ -26,7 +55,11 @@ function Novelties() {
 
             <div className="novelties__container">
 
-                <button className="novelties__arrow novelties__arrow--left">
+                {/* Botón de flecha izquierda */}
+                <button
+                    className="novelties__arrow novelties__arrow--left"
+                    onClick={handlePreviousPage}
+                >
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
 
@@ -51,9 +84,14 @@ function Novelties() {
                     )}
                 </ul>
 
-                <button className="novelties__arrow novelties__arrow--right">
+                {/* Botón de flecha derecha */}
+                <button
+                    className="novelties__arrow novelties__arrow--right"
+                    onClick={handleNextPage}
+                >
                     <FontAwesomeIcon icon={faChevronRight} />
                 </button>
+
             </div>
         </section>
     );
