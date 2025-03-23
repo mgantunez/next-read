@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div id="root" className="app-container">
+      <div id="root">
         <Header
 
           isNavVisible={isNavVisible}
@@ -25,7 +25,7 @@ function App() {
 
         />
 
-        <main className="main-content">
+        <main>
 
           <Routes>
 
