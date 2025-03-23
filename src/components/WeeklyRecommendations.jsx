@@ -34,6 +34,7 @@ function WeeklyRecommendations() {
 
     // Maneja el clic de la flecha izquierda
     const handlePreviousPage = () => {
+
         if (currentOffset > 0) {
             setCurrentOffset(currentOffset - limit);
         } else if (currentOffset === 0 && totalBooks > 0) {
