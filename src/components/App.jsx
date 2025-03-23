@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import Home from './layout/Home';
+import Main from './layout/Main';
 import NextReadRecommendations from './NextReadRecommendations';
 import WeeklyRecommendations from './WeeklyRecommendations';
 import Pendings from '../components/pages/Pendings';
@@ -17,34 +17,35 @@ function App() {
 
   return (
     <>
-      <Header
+      <div id="root">
+        <Header
 
-        isNavVisible={isNavVisible}
-        setIsNavVisible={setIsNavVisible}
+          isNavVisible={isNavVisible}
+          setIsNavVisible={setIsNavVisible}
 
-      />
+        />
 
-      <main className="home">
+        <main className="main-content">
 
-        <Routes>
+          <Routes>
 
-          <Route path="/" element={
-            <>
-              <Home />
-              <NextReadRecommendations />
-              <WeeklyRecommendations />
-            </>
-          } />
-          <Route path="/" element={<Home />} />
-          <Route path="/pendientes" element={<Pendings />} />
-          <Route path="/favoritos" element={<Favorites />} />
-          <Route path="/acceso" element={<SignInPage />} />
-          <Route path="*" element={<p>404 - Página no encontrada</p>} />
-        </Routes>
+            <Route path="/" element={
+              <>
+                <Main />
+                <NextReadRecommendations />
+                <WeeklyRecommendations />
+              </>
+            } />
+            <Route path="/" element={<Main />} />
+            <Route path="/pendientes" element={<Pendings />} />
+            <Route path="/favoritos" element={<Favorites />} />
+            <Route path="/acceso" element={<SignInPage />} />
+            <Route path="*" element={<p>404 - Página no encontrada</p>} />
+          </Routes>
 
-      </main>
-
-      <Footer />
+        </main>
+        <Footer />
+      </div>
     </>
   )
 }

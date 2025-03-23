@@ -37,12 +37,6 @@ ol[role='list'] {
   list-style: none;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
-
 /* Set shorter line heights on headings and interactive elements */
 h1,
 h2,
@@ -94,7 +88,7 @@ textarea:not([rows]) {
   scroll-margin-block: 5ex;
 }
 
-
+/* Set core body defaults */
 body {
   background-color: #f4f4f4;
   color: #333;
@@ -103,4 +97,18 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // La página ocupa al menos toda la pantalla
 }

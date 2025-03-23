@@ -6,13 +6,14 @@
     &__title {
         font-size: 1.8rem;
         color: #333;
+        margin-top: 50px;
         margin-bottom: 15px;
     }
 
     &__description {
         font-size: 1rem;
         color: #666;
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 
     &__form {
@@ -45,7 +46,7 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: background 0.3s ease;
+        transition: background-color 0.3s ease;
 
         &:hover {
             background-color: #a04e4e;
