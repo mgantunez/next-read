@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import Main from './layout/Home';
+import Home from './layout/Home';
 import NextReadRecommendations from './NextReadRecommendations';
 import WeeklyRecommendations from './WeeklyRecommendations';
 import Pendings from '../components/pages/Pendings';
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div id="root">
+      <div id="root" className="app-container">
         <Header
 
           isNavVisible={isNavVisible}
@@ -25,25 +25,25 @@ function App() {
 
         />
 
-        <main>
+        <main className="main-content">
 
           <Routes>
 
             <Route path="/" element={
               <>
-                <Main />
+                <Home />
                 <NextReadRecommendations />
                 <WeeklyRecommendations />
               </>
             } />
-            <Route path="/" element={<Main />} />
+
             <Route path="/pendientes" element={<Pendings />} />
             <Route path="/favoritos" element={<Favorites />} />
             <Route path="/acceso" element={<SignInPage />} />
             <Route path="*" element={<p>404 - Página no encontrada</p>} />
           </Routes>
-
         </main>
+
         <Footer />
       </div>
     </>

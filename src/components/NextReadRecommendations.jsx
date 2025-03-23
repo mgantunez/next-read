@@ -57,15 +57,15 @@ function NextReadRecommendations() {
     };
 
     return (
-        <section className="novelties">
+        <section className="recommendations">
 
-            <h2 className="novelties__title">Next Read recomienda: Chimamanda Ngozi Adichie</h2>
+            <h2 className="recommendations__title">Next Read recomienda: Chimamanda Ngozi Adichie</h2>
 
-            <div className="novelties__container">
+            <div className="recommendations__container">
 
                 {/* Botón de flecha izquierda */}
                 <button
-                    className="novelties__arrow novelties__arrow--left"
+                    className="recommendations__arrow recommendations__arrow--left"
                     onClick={handlePreviousPage}
                 >
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -74,7 +74,7 @@ function NextReadRecommendations() {
                 {/* Mostrar el spinner si está cargando */}
                 {isLoading ?
                     (
-                        <div className="novelties__spinner">
+                        <div className="recommendations__spinner">
                             <ClockLoader
                                 color="#d68e8e"
                                 size={75}
@@ -83,12 +83,12 @@ function NextReadRecommendations() {
                     )
                     :
                     (
-                        <ul className="novelties__list">
+                        <ul className="recommendations__list">
                             {books.length > 0 ? (
                                 books.map((book, index) => (
-                                    <li className="novelties__item" key={index}>
+                                    <li className="recommendations__item" key={index}>
                                         <img
-                                            className="novelties__image"
+                                            className="recommendations__image"
                                             src={book.cover_i ?
                                                 `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
                                                 :
@@ -99,16 +99,16 @@ function NextReadRecommendations() {
                                                 "Imagen no disponible"}
                                         />
 
-                                        <h3 className="novelties__book-title">{book.title}</h3>
-                                        <p className="novelties__author">{book.author_name ? book.author_name.join(", ") : "Autor desconocido"}</p>
+                                        <h3 className="recommendations__book-title">{book.title}</h3>
+                                        <p className="recommendations__author">{book.author_name ? book.author_name.join(", ") : "Autor desconocido"}</p>
 
-                                        <div className="novelties__btns">
+                                        <div className="recommendations__btns">
 
-                                            <button className="novelties__btn">
+                                            <button className="recommendations__btn">
                                                 <FontAwesomeIcon icon={faBookmark} />
                                             </button>
 
-                                            <button className="novelties__btn">
+                                            <button className="recommendations__btn">
                                                 <FontAwesomeIcon icon={faHeart} />
                                             </button>
                                         </div>
@@ -123,7 +123,7 @@ function NextReadRecommendations() {
 
                 {/* Botón de flecha derecha */}
                 <button
-                    className="novelties__arrow novelties__arrow--right"
+                    className="recommendations__arrow recommendations__arrow--right"
                     onClick={handleNextPage}
                 >
                     <FontAwesomeIcon icon={faChevronRight} />
