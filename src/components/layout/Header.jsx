@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBookmark, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 function Header({ isNavVisible, setIsNavVisible }) {
 
@@ -34,11 +34,11 @@ function Header({ isNavVisible, setIsNavVisible }) {
                         </li>
 
                         <li className="nav__item">
-                            <Link to="/pendientes" className={`nav__link ${location.pathname === "/pendientes" ? "nav__link-active" : ""}`}>Pendientes</Link>
+                            <Link to="/pendientes" className={`nav__link ${location.pathname === "/pendientes" ? "nav__link-active" : ""}`}>Pendientes  <FontAwesomeIcon icon={faBookmark} className="nav__btn" /></Link>
                         </li>
 
                         <li className="nav__item">
-                            <Link to="/favoritos" className={`nav__link ${location.pathname === "/favoritos" ? "nav__link-active" : ""}`}>Favoritos</Link>
+                            <Link to="/favoritos" className={`nav__link ${location.pathname === "/favoritos" ? "nav__link-active" : ""}`}>Favoritos <FontAwesomeIcon icon={faHeart} className="nav__btn" /></Link>
                         </li>
 
                         <li className="nav__item">

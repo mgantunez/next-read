@@ -63,7 +63,12 @@
         color: #666;
     }
 
-    &__add-btn {
+    &__btns {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__btn {
         background: none;
         border: none;
         cursor: pointer;
@@ -73,7 +78,7 @@
         margin-top: 10px;
     }
 
-    &__add-btn:hover {
+    &__btn:hover {
         color: #a04e4e;
         transform: scale(1.1);
     }

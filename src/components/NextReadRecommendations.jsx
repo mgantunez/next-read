@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBookmark, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faHeart, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { ClockLoader } from 'react-spinners';
 
 import nonAvailableImage from '../images/Imagen-no-disponible.png';
@@ -101,9 +101,18 @@ function NextReadRecommendations() {
 
                                         <h3 className="novelties__book-title">{book.title}</h3>
                                         <p className="novelties__author">{book.author_name ? book.author_name.join(", ") : "Autor desconocido"}</p>
-                                        <button className="novelties__add-btn">
-                                            <FontAwesomeIcon icon={faBookmark} />
-                                        </button>
+
+                                        <div className="novelties__btns">
+
+                                            <button className="novelties__btn">
+                                                <FontAwesomeIcon icon={faBookmark} />
+                                            </button>
+
+                                            <button className="novelties__btn">
+                                                <FontAwesomeIcon icon={faHeart} />
+                                            </button>
+                                        </div>
+
                                     </li>
                                 ))
                             ) : (
@@ -121,7 +130,7 @@ function NextReadRecommendations() {
                 </button>
 
             </div>
-        </section>
+        </section >
     );
 }
 

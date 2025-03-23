@@ -76,4 +76,18 @@
         font-weight: bold;
         border-bottom: 2px solid #d68e8e;
     }
+
+    &__btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #d68e8e;
+        transition: color 0.3s ease, transform 0.2s ease-in-out;
+        margin-left: 5px;
+    }
+
+    &__btn:hover {
+        color: #a04e4e;
+        transform: scale(1.1);
+    }
 }
