@@ -70,4 +70,10 @@
         color: #d68e8e;
         border-bottom: 2px solid #d68e8e;
     }
+
+    &__link-active {
+        color: #d68e8e;
+        font-weight: bold;
+        border-bottom: 2px solid #d68e8e;
+    }
 }

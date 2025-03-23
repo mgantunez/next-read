@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function Header({ isNavVisible, setIsNavVisible }) {
+
+    const location = useLocation();
 
     // Para mostrar el menú en la hamburguesa
     const toggleNav = () => {
@@ -26,18 +28,23 @@ function Header({ isNavVisible, setIsNavVisible }) {
                     </div>
 
                     <ul className={`nav__list ${isNavVisible ? 'active' : ''}`}>
+
                         <li className="nav__item">
-                            <Link to="/" className="nav__link">Inicio</Link>
+                            <Link to="/" className={`nav__link ${location.pathname === "/" ? "nav__link-active" : ""}`}>Inicio</Link>
                         </li>
+
                         <li className="nav__item">
-                            <Link to="/pendientes" className="nav__link">Pendientes</Link>
+                            <Link to="/pendientes" className={`nav__link ${location.pathname === "/pendientes" ? "nav__link-active" : ""}`}>Pendientes</Link>
                         </li>
+
                         <li className="nav__item">
-                            <Link to="/favoritos" className="nav__link">Favoritos</Link>
+                            <Link to="/favoritos" className={`nav__link ${location.pathname === "/favoritos" ? "nav__link-active" : ""}`}>Favoritos</Link>
                         </li>
+
                         <li className="nav__item">
-                            <Link to="/acceso" className="nav__link">Acceso</Link>
+                            <Link to="/acceso" className={`nav__link ${location.pathname === "/acceso" ? "nav__link-active" : ""}`}>Acceso</Link>
                         </li>
+
                     </ul>
 
                 </nav>
