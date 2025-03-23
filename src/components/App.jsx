@@ -7,7 +7,7 @@ import NextReadRecommendations from './NextReadRecommendations';
 import WeeklyRecommendations from './WeeklyRecommendations';
 import Pendings from '../components/pages/Pendings';
 import Favorites from '../components/pages/Favorites';
-import AccessPage from '../components/pages/AccessPage';
+import SignInPage from '../components/pages/SignInPage';
 
 import '../styles/App.scss';
 
@@ -38,7 +38,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/pendientes" element={<Pendings />} />
           <Route path="/favoritos" element={<Favorites />} />
-          <Route path="/acceso" element={<AccessPage />} />
+          <Route path="/acceso" element={<SignInPage />} />
           <Route path="*" element={<p>404 - Página no encontrada</p>} />
         </Routes>
 
