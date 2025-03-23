@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import Main from './layout/Main';
+import Home from './layout/Home';
 import NextReadRecommendations from './NextReadRecommendations';
 import WeeklyRecommendations from './WeeklyRecommendations';
 
@@ -23,7 +23,7 @@ function App() {
 
       <main className="main">
 
-        <Main />
+        <Home />
         <NextReadRecommendations />
         <WeeklyRecommendations />
 

@@ -29,7 +29,7 @@ function Header({ isNavVisible, setIsNavVisible }) {
                         <li className="nav__item"><a href="#" className="nav__link">Inicio</a></li>
                         <li className="nav__item"><a href="#" className="nav__link">Pendientes</a></li>
                         <li className="nav__item"><a href="#" className="nav__link">Favoritos</a></li>
-                        <li className="nav__item"><a href="#" className="nav__link">Contacto</a></li>
+                        <li className="nav__item"><a href="#" className="nav__link">Acceso</a></li>
                     </ul>
 
                 </nav>
