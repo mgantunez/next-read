@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,9 +15,9 @@ function Header({ isNavVisible, setIsNavVisible }) {
 
             <div className="header__container">
 
-                <a href="#" className="header__logo">
+                <Link to="/" className="header__logo">
                     <img className="header__logo-img" src="/logo-Next-Read.svg" alt="Next Read Logo" />
-                </a>
+                </Link>
 
                 <nav className="nav">
 
@@ -26,10 +26,18 @@ function Header({ isNavVisible, setIsNavVisible }) {
                     </div>
 
                     <ul className={`nav__list ${isNavVisible ? 'active' : ''}`}>
-                        <li className="nav__item"><a href="#" className="nav__link">Inicio</a></li>
-                        <li className="nav__item"><a href="#" className="nav__link">Pendientes</a></li>
-                        <li className="nav__item"><a href="#" className="nav__link">Favoritos</a></li>
-                        <li className="nav__item"><a href="#" className="nav__link">Acceso</a></li>
+                        <li className="nav__item">
+                            <Link to="/" className="nav__link">Inicio</Link>
+                        </li>
+                        <li className="nav__item">
+                            <Link to="/pendientes" className="nav__link">Pendientes</Link>
+                        </li>
+                        <li className="nav__item">
+                            <Link to="/favoritos" className="nav__link">Favoritos</Link>
+                        </li>
+                        <li className="nav__item">
+                            <Link to="/acceso" className="nav__link">Acceso</Link>
+                        </li>
                     </ul>
 
                 </nav>
