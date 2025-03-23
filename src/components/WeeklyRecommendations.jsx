@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { ClockLoader } from 'react-spinners';
 
 import nonAvailableImage from '../images/Imagen-no-disponible.png';
 
@@ -8,11 +9,13 @@ function WeeklyRecommendations() {
     const [books, setBooks] = useState([]);
     const [currentOffset, setCurrentOffset] = useState(0); // Offset para manejar la paginación
     const [totalBooks, setTotalBooks] = useState(0); // Total de libros disponibles
+    const [isLoading, setIsLoading] = useState(true); // Estado para saber si está cargando
     const limit = 3; // Limitar a 3 libros por página
 
     // Función para cargar los libros de la API
     useEffect(() => {
         const fetchBooks = async () => {
+            setIsLoading(true); // Iniciar carga de libros
             try {
                 const response = await fetch(`https://openlibrary.org/trending/weekly.json`);
                 const data = await response.json();
@@ -21,6 +24,8 @@ function WeeklyRecommendations() {
                 setTotalBooks(Math.floor(data.works.length - limit)); // Total de libros encontrados
             } catch (error) {
                 console.error("Error fetching books:", error);
+            } finally {
+                setIsLoading(false); // Finaliza la carga de libros
             }
         };
 
@@ -63,37 +68,48 @@ function WeeklyRecommendations() {
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
 
-                <ul className="novelties__list">
-                    {books.length > 0
-                        ?
-                        (
-                            books.map((book, index) => (
-                                <li className="novelties__item" key={index}>
-                                    <img
-                                        className="novelties__image"
-                                        src={book.cover_i ?
-                                            `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
-                                            :
-                                            nonAvailableImage}
-                                        alt={book.cover_i ?
-                                            `Portada del libro: ${book.title}`
-                                            :
-                                            "Imagen no disponible"}
-                                    />
+                {/* Mostrar el spinner si está cargando */}
+                {isLoading ?
+                    (
+                        <div className="novelties__spinner">
+                            <ClockLoader
+                                color="#d68e8e"
+                                size={75}
+                            />
+                        </div>
+                    )
+                    :
+                    (
+                        <ul className="novelties__list">
+                            {books.length > 0 ? (
+                                books.map((book, index) => (
+                                    <li className="novelties__item" key={index}>
+                                        <img
+                                            className="novelties__image"
+                                            src={book.cover_i ?
+                                                `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+                                                :
+                                                nonAvailableImage}
+                                            alt={book.cover_i ?
+                                                `Portada del libro: ${book.title}`
+                                                :
+                                                "Imagen no disponible"}
+                                        />
 
-                                    <h3 className="novelties__book-title">{book.title}</h3>
-                                    <p className="novelties__author">{book.author_name ? book.author_name.join(", ") : "Autor desconocido"}</p>
-                                    <button className="novelties__add-btn">
-                                        <FontAwesomeIcon icon={faBookmark} />
-                                    </button>
-                                </li>
-                            ))
-                        )
-                        :
-                        (
-                            <p>Cargando libros...</p>
-                        )}
-                </ul>
+                                        <h3 className="novelties__book-title">{book.title}</h3>
+                                        <p className="novelties__author">{book.author_name ? book.author_name.join(", ") : "Autor desconocido"}</p>
+                                        <button className="novelties__add-btn">
+                                            <FontAwesomeIcon icon={faBookmark} />
+                                        </button>
+                                    </li>
+                                ))
+                            ) : (
+                                <p>No se encontraron libros</p>
+                            )}
+                        </ul>
+                    )}
+
+
 
                 {/* Botón de flecha derecha */}
                 <button
