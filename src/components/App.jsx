@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import Main from './layout/Main';
+import Main from './layout/Home';
 import NextReadRecommendations from './NextReadRecommendations';
 import WeeklyRecommendations from './WeeklyRecommendations';
 import Pendings from '../components/pages/Pendings';
@@ -25,7 +25,7 @@ function App() {
 
         />
 
-        <main className="main-content">
+        <main>
 
           <Routes>
 
